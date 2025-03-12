@@ -1,4 +1,4 @@
-import { PATH } from "@/constants/path";
+import { PATH } from "@/constants/routePath";
 import Link from "next/link";
 
 const Home = () => {
