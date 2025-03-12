@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
+import { PATH } from "@/constants/routePath";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,16 +28,28 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen relative`}
       >
-        <header>
-          <Link href={"/"}>HOME</Link>
-          <Link href={"champions"}>CHAMPIONS</Link>
-          <Link href={"/items"}>ITEMS</Link>
-          <Link href={"/rotation"}>ROTATION</Link>
+        <header className="w-full h-16 bg-neutral-900 flex justify-around items-center fixed z-10">
+          <Link href={PATH.HOME} className={naviHover}>
+            HOME
+          </Link>
+          <Link href={PATH.CHAMPIONS} className={naviHover}>
+            CHAMPIONS
+          </Link>
+          <Link href={PATH.ITEMS} className={naviHover}>
+            ITEMS
+          </Link>
+          <Link href={PATH.ROTATION} className={naviHover}>
+            ROTATION
+          </Link>
         </header>
-        {children}
+        <main className="w-full absolute top-16">{children}</main>
       </body>
     </html>
   );
 }
+
+//style
+const naviHover =
+  "font-bold text-lg duration-300 ease-linear cursor-pointer hover:text-yellow-500";
