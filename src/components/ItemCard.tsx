@@ -11,7 +11,7 @@ const ItemCard = ({ id, item }: ItemCardProps) => {
   return (
     <div
       key={id}
-      className="h-40 border border-neutral-500 p-5 lg:p-10 rounded-lg flex items-center"
+      className="h-60 border border-neutral-500 p-5 lg:p-10 rounded-lg flex items-center"
     >
       <div className="w-16 h-16 relative">
         <Image
