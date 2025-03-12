@@ -25,7 +25,7 @@ const Home = () => {
 };
 
 //style
-const linkHover =
+const linkHover: string =
   "duration-300 ease-linear cursor-pointer hover:text-yellow-500";
 
 export default Home;
