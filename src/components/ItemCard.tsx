@@ -1,4 +1,4 @@
-import { imgApiUrl } from "@/services/apiUrl";
+import { squareImgUrl } from "@/services/apiUrl";
 import { Item } from "@/types/Items";
 import Image from "next/image";
 
@@ -15,7 +15,7 @@ const ItemCard = ({ id, item }: ItemCardProps) => {
     >
       <div className="w-16 h-16 relative">
         <Image
-          src={`${imgApiUrl}/item/${item.image.full}`}
+          src={`${squareImgUrl}/item/${item.image.full}`}
           alt={item.name}
           fill
           className="object-fill"

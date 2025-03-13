@@ -1,9 +1,9 @@
 import { Champion } from "@/types/Champions";
-import { dataApiUrl } from "../../services/apiUrl";
+import { dataUrl } from "../../services/apiUrl";
 import ChampionCard from "@/components/ChampionCard";
 
 const championsPage = async () => {
-  const response = await fetch(`${dataApiUrl}/champion.json`, {
+  const response = await fetch(`${dataUrl}/champion.json`, {
     next: {
       revalidate: 86400
     }
