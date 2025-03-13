@@ -1,5 +1,5 @@
 import { Item } from "@/types/Items";
-import { dataApiUrl } from "../api/apiUrl";
+import { dataApiUrl } from "../../services/apiUrl";
 import ItemCard from "@/components/ItemCard";
 
 const itemsPage = async () => {

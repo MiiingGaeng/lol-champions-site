@@ -1,5 +1,5 @@
-import { imgApiUrl } from "@/app/api/apiUrl";
 import { PATH } from "@/constants/routePath";
+import { imgApiUrl } from "@/services/apiUrl";
 import { Champion } from "@/types/Champions";
 import Image from "next/image";
 import Link from "next/link";

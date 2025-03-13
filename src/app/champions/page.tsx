@@ -1,5 +1,5 @@
 import { Champion } from "@/types/Champions";
-import { dataApiUrl } from "../api/apiUrl";
+import { dataApiUrl } from "../../services/apiUrl";
 import ChampionCard from "@/components/ChampionCard";
 
 const championsPage = async () => {

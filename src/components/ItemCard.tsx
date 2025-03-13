@@ -1,4 +1,4 @@
-import { imgApiUrl } from "@/app/api/apiUrl";
+import { imgApiUrl } from "@/services/apiUrl";
 import { Item } from "@/types/Items";
 import Image from "next/image";
 
