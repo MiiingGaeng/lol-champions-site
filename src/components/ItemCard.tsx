@@ -1,4 +1,4 @@
-import { imgApiUrl } from "@/app/api/apiUrl";
+import { squareImgUrl } from "@/services/apiUrl";
 import { Item } from "@/types/Items";
 import Image from "next/image";
 
@@ -15,15 +15,16 @@ const ItemCard = ({ id, item }: ItemCardProps) => {
     >
       <div className="w-16 h-16 relative">
         <Image
-          src={`${imgApiUrl}/item/${item.image.full}`}
+          src={`${squareImgUrl}/item/${item.image.full}`}
           alt={item.name}
           fill
           className="object-fill"
+          sizes="(max-width: 768px) 128px, (max-width: 1200px) 128px"
         />
       </div>
 
       <div className="ml-5 w-3/4 xl:ml-10">
-        <h3 className="text-base font-bold">{item.name}</h3>
+        <h3 className="text-lg font-bold">{item.name}</h3>
         <p className="text-sm">{item.plaintext}</p>
         <div className="mt-2">
           <p className={priceStyle}>구매가 : {item.gold.base}</p>
