@@ -14,3 +14,8 @@ export const championsSplashImgUrl: string =
 //챔피언 loading 이미지 url : ${champion.id}_0.jpg (Aatrox_0.jpg)
 export const championLoadingImgUrl: string =
   "https://ddragon.leagueoflegends.com/cdn/img/champion/loading";
+
+export const ROTATION_URL: string =
+  "https://kr.api.riotgames.com/lol/platform/v3/champion-rotations";
+
+export const BASE_URL: string = "http://localhost:3000";
