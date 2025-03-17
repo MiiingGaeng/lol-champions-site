@@ -1,8 +1,5 @@
-import {
-  CHAM_FULL_IMG_URL,
-  DATA_URL,
-  SQUARE_IMG_URL
-} from "@/constants/apiUrl";
+import { CHAM_FULL_IMG_URL, SQUARE_IMG_URL } from "@/constants/apiUrl";
+import { getChampionDetail } from "@/services/getData";
 import { ChampionDetail } from "@/types/Champions";
 import Image from "next/image";
 import React from "react";
@@ -14,10 +11,7 @@ const DetailPage = async ({
     id: string;
   };
 }) => {
-  const response = await fetch(`${DATA_URL}/champion/${params.id}.json`, {
-    cache: "no-store"
-  });
-  const { data: championDetail } = await response.json();
+  const championDetail = await getChampionDetail(params.id);
   const { id, name, lore, tags, info, spells }: ChampionDetail =
     championDetail[params.id];
 

@@ -1,18 +1,14 @@
 import { Champion } from "@/types/Champions";
-import { DATA_URL } from "../../constants/apiUrl";
 import ChampionCard from "@/components/ChampionCard";
+import { getChampionData } from "@/services/getData";
 
 const championsPage = async () => {
-  const response = await fetch(`${DATA_URL}/champion.json`, {
-    next: {
-      revalidate: 86400
-    }
-  });
-  const { data: championList } = await response.json();
+  const championData = await getChampionData();
+  const championList = Object.entries<Champion>(championData);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-      {Object.entries<Champion>(championList)?.map(([id, cham]) => (
+      {championList.map(([id, cham]) => (
         <ChampionCard key={id} id={id} cham={cham} />
       ))}
     </div>
