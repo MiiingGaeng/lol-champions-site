@@ -11,7 +11,6 @@ const RotationListForNew = () => {
   useEffect(() => {
     getRotationForNew()
       .then(({ rotationListForNew }) => {
-        console.log(rotationListForNew);
         setRotationList(rotationListForNew);
       })
       .catch((err) => console.error(err));
