@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen relative`}
       >
-        <header className="w-full h-16 bg-neutral-900 flex justify-around items-center fixed z-10">
+        <header className="w-full h-16 bg-neutral-900 flex justify-around items-center fixed z-50">
           <Link href={PATH.HOME} className={naviHover}>
             HOME
           </Link>
