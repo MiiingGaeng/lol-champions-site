@@ -4,7 +4,7 @@ import Image from "next/image";
 
 type ItemCardProps = {
   id: string;
-  item: Item;
+  item: Pick<Item, "name" | "plaintext" | "gold" | "image">;
 };
 
 const ItemCard = ({ id, item }: ItemCardProps) => {

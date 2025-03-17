@@ -12,7 +12,14 @@ const DetailPage = async ({
   };
 }) => {
   const championDetail = await getChampionDetail(params.id);
-  const { id, name, lore, tags, info, spells }: ChampionDetail =
+  const {
+    id,
+    name,
+    lore,
+    tags,
+    info,
+    spells
+  }: Pick<ChampionDetail, "id" | "name" | "lore" | "tags" | "info" | "spells"> =
     championDetail[params.id];
 
   return (
