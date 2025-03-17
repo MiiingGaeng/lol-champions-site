@@ -3,22 +3,22 @@
 import { Champion } from "@/types/Champions";
 import { useEffect, useState } from "react";
 import ChampionCard from "../ChampionCard";
+import { getRotationForNew } from "@/services/server-action";
 
-const RotationListForAll = () => {
+const RotationListForNew = () => {
   const [rotationList, setRotationList] = useState<Champion[]>([]);
 
   useEffect(() => {
-    fetch("/api/rotation-alluser")
-      .then((res) => res.json())
-      .then(({ rotationListForAll }) => {
-        setRotationList(rotationListForAll);
+    getRotationForNew()
+      .then(({ rotationListForNew }) => {
+        setRotationList(rotationListForNew);
       })
       .catch((err) => console.error(err));
   }, []);
 
   return (
     <div>
-      <h2>금주의 로테이션 - 모든 유저</h2>
+      <h2>금주의 로테이션 - Lv.10 이하</h2>
       {rotationList?.map((cham) => (
         <ChampionCard key={cham.id} id={cham.id} cham={cham} />
       ))}
@@ -26,4 +26,4 @@ const RotationListForAll = () => {
   );
 };
 
-export default RotationListForAll;
+export default RotationListForNew;
