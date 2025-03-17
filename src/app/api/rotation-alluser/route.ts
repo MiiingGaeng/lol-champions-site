@@ -1,4 +1,4 @@
-import { dataUrl, ROTATION_URL } from "@/services/apiUrl";
+import { DATA_URL, ROTATION_URL } from "@/constants/apiUrl";
 import { Champion } from "@/types/Champions";
 import { RotationData } from "@/types/Rotations";
 
@@ -23,7 +23,7 @@ export async function GET() {
   const dataRotation: RotationData = await resRotation.json();
 
   // 챔피언 목록 데이터 가져오기
-  const resChampions = await fetch(`${dataUrl}/champion.json`);
+  const resChampions = await fetch(`${DATA_URL}/champion.json`);
   const { data: dataChampions } = await resChampions.json();
   const championList: Champion[] = Object.values(dataChampions);
 

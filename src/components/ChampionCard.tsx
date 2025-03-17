@@ -1,5 +1,5 @@
+import { SQUARE_IMG_URL } from "@/constants/apiUrl";
 import { PATH } from "@/constants/routePath";
-import { squareImgUrl } from "@/services/apiUrl";
 import { Champion } from "@/types/Champions";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,7 +18,7 @@ const ChampionCard = ({ id, cham }: ChampionCardProps) => {
     >
       <div className="w-32 h-32 lg:w-40 lg:h-40 relative">
         <Image
-          src={`${squareImgUrl}/champion/${cham.image.full}`}
+          src={`${SQUARE_IMG_URL}/champion/${cham.image.full}`}
           alt={cham.name}
           fill
           sizes="(max-width: 768px) 128px, (max-width: 1200px) 128px"

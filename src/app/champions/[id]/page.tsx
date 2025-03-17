@@ -1,8 +1,8 @@
 import {
-  championsSplashImgUrl,
-  dataUrl,
-  squareImgUrl
-} from "@/services/apiUrl";
+  CHAM_FULL_IMG_URL,
+  DATA_URL,
+  SQUARE_IMG_URL
+} from "@/constants/apiUrl";
 import { ChampionDetail } from "@/types/Champions";
 import Image from "next/image";
 import React from "react";
@@ -14,7 +14,7 @@ const DetailPage = async ({
     id: string;
   };
 }) => {
-  const response = await fetch(`${dataUrl}/champion/${params.id}.json`, {
+  const response = await fetch(`${DATA_URL}/champion/${params.id}.json`, {
     cache: "no-store"
   });
   const { data: championDetail } = await response.json();
@@ -27,7 +27,7 @@ const DetailPage = async ({
       style={{ height: "calc(100vh - 64px)" }}
     >
       <Image
-        src={`${championsSplashImgUrl}/${id}_0.jpg`}
+        src={`${CHAM_FULL_IMG_URL}/${id}_0.jpg`}
         alt={id}
         fill
         className="object-cover"
@@ -69,7 +69,7 @@ const DetailPage = async ({
               return (
                 <div key={spell.name} className="flex">
                   <Image
-                    src={`${squareImgUrl}/spell/${spell.image.full}`}
+                    src={`${SQUARE_IMG_URL}/spell/${spell.image.full}`}
                     alt={spell.name}
                     width={60}
                     height={60}

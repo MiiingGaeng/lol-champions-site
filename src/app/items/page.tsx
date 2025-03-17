@@ -1,9 +1,9 @@
 import { Item } from "@/types/Items";
-import { dataUrl } from "../../services/apiUrl";
+import { DATA_URL } from "../../constants/apiUrl";
 import ItemCard from "@/components/ItemCard";
 
 const itemsPage = async () => {
-  const response = await fetch(`${dataUrl}/item.json`, {
+  const response = await fetch(`${DATA_URL}/item.json`, {
     cache: "force-cache"
   });
   const { data: itemList } = await response.json();
