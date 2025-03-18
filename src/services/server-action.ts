@@ -1,3 +1,5 @@
+"use server";
+
 import { Champion } from "../types/Champions";
 import { getChampionData, getRotationData } from "./getData";
 
