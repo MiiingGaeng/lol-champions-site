@@ -1,10 +1,13 @@
 import SpellCard from "@/components/SpellCard";
 import { CHAM_FULL_IMG_URL } from "@/constants/apiUrl";
+import { PATH } from "@/constants/routePath";
 import { getChampionDetail } from "@/services/getData";
 import { ChampionDetail, ChampionSpell } from "@/types/Champions";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaCircle } from "react-icons/fa";
+import { IoIosArrowBack } from "react-icons/io";
 
 const DetailPage = async ({
   params
@@ -34,12 +37,16 @@ const DetailPage = async ({
       />
 
       <aside className="absolute z-20 left-0 top-full lg:top-0 w-screen h-[calc(100vh-64px)] lg:w-1/2 bg-gradient-to-r from-black/100 via-black/80 to-transparent p-3">
+        <Link href={PATH.CHAMPIONS}>
+          <IoIosArrowBack className="w-7 h-7 mb-7 hover:text-yellow-500" />
+        </Link>
+
         <article>
           <h3 className="text-2xl font-bold mb-5">{name}</h3>
           <p className="w-full lg:w-2/3 text-xs mb-5">{lore}</p>
         </article>
 
-        <section className="flex gap-3 mb-10">
+        <section className="flex gap-3 mb-5">
           {tags.map((tag) => (
             <div
               key={tag}
@@ -50,7 +57,7 @@ const DetailPage = async ({
           ))}
         </section>
 
-        <section className="mb-10">
+        <section className="mb-5">
           <h5 className="text-lg font-bold mb-2">INFO</h5>
           <hr className="w-full lg:w-2/3 mb-2" />
           <ul>
