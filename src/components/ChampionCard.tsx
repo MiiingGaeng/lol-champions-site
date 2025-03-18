@@ -1,5 +1,5 @@
+import { CHAM_FULL_IMG_URL } from "@/constants/apiUrl";
 import { PATH } from "@/constants/routePath";
-import { squareImgUrl } from "@/services/apiUrl";
 import { Champion } from "@/types/Champions";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,26 +14,23 @@ const ChampionCard = ({ id, cham }: ChampionCardProps) => {
     <Link
       href={`${PATH.CHAMPIONS}/${id}`}
       key={id}
-      className="h-60 border border-neutral-500 p-5 lg:p-10 rounded-lg flex items-center cursor-pointer"
+      className="h-60 lg:p-10 flex items-center cursor-pointer relative duration-200 hover:scale-105"
     >
-      <div className="w-32 h-32 lg:w-40 lg:h-40 relative">
-        <Image
-          src={`${squareImgUrl}/champion/${cham.image.full}`}
-          alt={cham.name}
-          fill
-          sizes="(max-width: 768px) 128px, (max-width: 1200px) 128px"
-          className="object-fill"
-        />
-      </div>
+      <Image
+        src={`${CHAM_FULL_IMG_URL}/${id}_0.jpg`}
+        alt={cham.name}
+        fill
+        className="object-fill z-0"
+      />
 
-      <div className="ml-5 w-1/2 flex flex-col gap-2">
-        <h3 className="text-lg font-bold">{cham.name}</h3>
-        <p className="text-base text-neutral-500">{cham.title}</p>
+      <div className="w-full h-40 flex flex-col justify-center pl-5 absolute z-10 bottom-0 left-0 bg-gradient-to-t from-black/100 via-black/80 to-transparent">
+        <h3 className="text-2xl font-bold">{cham.name}</h3>
+        <p className="text-lg text-neutral-300">{cham.title}</p>
         <div className="flex gap-3">
-          {cham.tags.map((tag) => (
+          {cham.tags?.map((tag) => (
             <div
               key={tag}
-              className="bg-amber-600 text-xs w-16 h-5 rounded-md flex justify-center items-center"
+              className="bg-amber-500 text-xs w-16 h-5 rounded-md flex justify-center items-center"
             >
               {tag}
             </div>
