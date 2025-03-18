@@ -25,10 +25,7 @@ const DetailPage = async ({
     championDetail[params.id];
 
   return (
-    <main
-      className="w-screen relative"
-      style={{ height: "calc(100vh - 64px)" }}
-    >
+    <main className="w-screen relative h-[calc(100vh-64px)]">
       <Image
         src={`${CHAM_FULL_IMG_URL}/${id}_0.jpg`}
         alt={id}
