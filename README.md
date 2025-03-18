@@ -7,34 +7,43 @@ Next.js를 사용한 프로젝트로, 리그 오브 레전드의 아이템과 �
 ## 프로젝트 미리보기🧚
 
 - Home
+<img width="1440" alt="Screenshot 2025-03-18 at 4 52 25 PM" src="https://github.com/user-attachments/assets/51e5a938-63c9-4e6b-91d4-76d55bdc3a22" />
 
 - Item
+<img width="1440" alt="Screenshot 2025-03-18 at 4 54 17 PM" src="https://github.com/user-attachments/assets/b980d97d-ffa1-4ee6-98a3-f9237e84fb19" />
 
 - Champion
+<img width="1440" alt="Screenshot 2025-03-18 at 4 52 35 PM" src="https://github.com/user-attachments/assets/03d3a1a8-59ac-45d7-952f-1212b8592db9" />
 
 - Champion Detail
+<img width="1440" alt="Screenshot 2025-03-18 at 4 54 07 PM" src="https://github.com/user-attachments/assets/f8537bc5-f172-467b-b657-3d9ec79d16c8" />
 
 - Rotation
+<img width="1440" alt="Screenshot 2025-03-18 at 4 54 24 PM" src="https://github.com/user-attachments/assets/a3c061d8-aaf3-44ef-b523-8400e0b2ea78" />
 
 - 반응형
   <table>
     <tr>
       <td align="center">
-        <img src="./public/images/반응형마이페이지.png" width="200px"><br>
+        <img width="215" alt="Screenshot 2025-03-18 at 8 00 32 PM" src="https://github.com/user-attachments/assets/63e23e39-8082-470e-97e9-ab4014c06a14" />
+<br>
         <strong>반응형 Home</strong>
       </td>
       <td align="center">
-        <img src="./public/images/반응형마이페이지.png" width="200px"><br>
+        <img width="215" alt="Screenshot 2025-03-18 at 8 00 42 PM" src="https://github.com/user-attachments/assets/180c8358-e140-48d9-81ce-cfa04955af3a" />
+<br>
         <strong>반응형 Champion</strong>
       </td>
     </tr>
     <tr>
       <td align="center">
-        <img src="./public/images/반응형테스트.png" width="200px"><br>
+        <img width="215" alt="Screenshot 2025-03-18 at 8 00 47 PM" src="https://github.com/user-attachments/assets/cb11d524-d6f1-420d-aa8d-c6207feedcb3" />
+<br>
         <strong>반응형 Item</strong>
       </td>
       <td align="center">
-        <img src="./public/images/반응형결과.png" width="200px"><br>
+        <img width="215" alt="Screenshot 2025-03-18 at 8 00 57 PM" src="https://github.com/user-attachments/assets/c908890f-fc8a-430e-8542-1cbbf3f52d16" />
+<br>
         <strong>반응형 Rotation</strong>
       </td>
     </tr>
