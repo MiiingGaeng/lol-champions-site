@@ -1,4 +1,5 @@
 import { DATA_URL, ROTATION_URL } from "@/constants/apiUrl";
+import { Champion } from "@/types/Champions";
 import { RotationData } from "@/types/Rotations";
 
 export const getItemData = async () => {
@@ -24,6 +25,7 @@ export const getChampionDetail = async (id: string) => {
     cache: "no-store"
   });
   const { data } = await response.json();
+
   return data;
 };
 
@@ -36,7 +38,9 @@ export const getRotationData = async (headers: HeadersInit) => {
   return data;
 };
 
-export const getRotationForAllData = async () => {
+export const getRotationForAllData = async (): Promise<{
+  rotationListForAll: Champion[];
+}> => {
   const response = await fetch("/api/rotation-alluser");
   const data = await response.json();
   return data;

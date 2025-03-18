@@ -27,7 +27,7 @@ const ChampionCard = ({ id, cham }: ChampionCardProps) => {
         <h3 className="text-2xl font-bold">{cham.name}</h3>
         <p className="text-lg text-neutral-300">{cham.title}</p>
         <div className="flex gap-3">
-          {cham.tags.map((tag) => (
+          {cham.tags?.map((tag) => (
             <div
               key={tag}
               className="bg-amber-500 text-xs w-16 h-5 rounded-md flex justify-center items-center"

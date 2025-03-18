@@ -1,18 +1,23 @@
 "use client";
 
-import { Champion } from "@/types/Champions";
-import { useEffect, useState } from "react";
 import ChampionCard from "../ChampionCard";
 import { getRotationForAllData } from "@/services/getData";
+import { useQuery } from "@tanstack/react-query";
 
 const RotationListForAll = () => {
-  const [rotationList, setRotationList] = useState<Champion[]>([]);
+  const { data, isPending, error } = useQuery({
+    queryKey: ["rotationForAll"],
+    queryFn: getRotationForAllData
+  });
 
-  useEffect(() => {
-    getRotationForAllData().then(({ rotationListForAll }) => {
-      setRotationList(rotationListForAll);
-    });
-  }, []);
+  if (isPending) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    console.error("Rotation For All Error : ", error);
+    return <div>에러가 발생했습니다... 다시 시도해주세요!</div>;
+  }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
@@ -22,9 +27,9 @@ const RotationListForAll = () => {
           금주 모든 유저에게 무료로 제공되는 챔피언입니다.
         </p>
       </div>
-      {rotationList?.map((cham) => (
-        <ChampionCard key={cham.id} id={cham.id} cham={cham} />
-      ))}
+      {data.rotationListForAll?.map((cham) => {
+        return <ChampionCard key={cham.id} id={cham.id} cham={cham} />;
+      })}
     </div>
   );
 };
